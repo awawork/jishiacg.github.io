@@ -1,38 +1,23 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="zh-cn">
-<head>
-<meta name="Keywords" content="" />
-<meta name="Description" content="" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
-<title>JISHIACG</title>
-<style type="text/css">
-<!--
-#tbody{width:350px;}
--->
-</style>
-<script type="text/javascript">
-<!--
-$(function(){
-	var lang = window.navigator.userLanguage || window.navigator.language ;		
-	var relang=lang.toLowerCase();
-	switch (relang){
-		case "zh-cn":
-			$("#tbody").load("zh-cn/index.html");
-		break
-			
-		case "zh-tw":
-			$("#tbody").load("zh-tw/index.html");
-		break		
-	}			
-});
-//-->
-</script>
-</head>
-
-<body>
-<div id="tbody"></div>
-</body>
-</html>
+<?
+function lang_header($lang='zh-tw'){
+	switch ($lang) {
+		case 'zh-tw':
+			// 台灣人
+			header('Location: http://jishiacg.work/zh-tw/index.html');
+			break;
+		case 'zh-cn':
+			// 大陸客
+			header('Location: http://jishiacg.work/zh-cn/index.html');
+			break;
+		case 'zh-hk':
+			// 香港仔
+			header('Location: http://jishiacg.work/zh-tw/index.html');
+			break;
+		default:
+			// 當輸入語系代號沒有的時候預設連結
+			header('Location: http://jishiacg.work/zh-tw/index.html');
+			break;
+	}
+	exit();
+}
+?>
