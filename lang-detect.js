@@ -1,23 +1,23 @@
 try {
   var switchPage = function (language) {
     switch (language) {
-      case 'zh-cn':
-        console.log('/zh-CN' + window.location.pathname);
-        window.location.href = '/zh-CN' + window.location.pathname;
+      case 'cn':
+        console.log('/cn' + window.location.pathname);
+        window.location.href = '/cn' + window.location.pathname;
         return true;
         break;
 
       case 'zh':
-      case 'zh-tw':
-        console.log('/zh-TW' + window.location.pathname);
-        window.location.href = '/zh-TW' + window.location.pathname;
+      case 'tw':
+        console.log('/tw' + window.location.pathname);
+        window.location.href = '/tw' + window.location.pathname;
         return true;
         break;
 
       case 'en':
-      case 'en-us':
-        console.log('/en-US' + window.location.pathname);
-        window.location.href = '/en-US' + window.location.pathname;
+      case 'tw':
+        console.log('/tw' + window.location.pathname);
+        window.location.href = '/tw' + window.location.pathname;
         return true;
         break;
 
@@ -43,8 +43,8 @@ try {
   }
 
   if (!found) {
-    window.location.href = '/en-US' + window.location.pathname;
+    window.location.href = '/tw' + window.location.pathname;
   }
 } catch (e) {
-  window.location.href = '/en-US' + window.location.pathname;
+  window.location.href = '/tw' + window.location.pathname;
 }
