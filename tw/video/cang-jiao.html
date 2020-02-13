@@ -1,12 +1,36 @@
-<!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>jishiacg</title>
+    <title>Subway Maps</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
-<video autoplay="autoplay"  muted="true" width="800" height="450" controls>
-<source type="video/mp4" src="cang-jiao.mp4"></source>
-</video>
-<body>
+<body onload="onload();">
+    <video id="idle_video" width="100%" onended="onVideoEnded();"></video>
+    <script>
+        var video_list      = ["cang-jiao.mp4",
+                                "cang-you.mp4",
+                                "cang-jiao.mp4"
+                            ];
+        var video_index     = 0;
+        var video_player    = null;
+
+        function onload(){
+            console.log("body loaded");
+            video_player        = document.getElementById("idle_video");
+            video_player.setAttribute("src", video_list[video_index]);
+            video_player.play();
+        }
+
+        function onVideoEnded(){
+            console.log("video ended");
+            if(video_index < video_list.length - 1){
+                video_index++;
+            }
+            else{
+                video_index = 0;
+            }
+            video_player.setAttribute("src", video_list[video_index]);
+            video_player.play();
+        }
+    </script>
 </body>
-</html>
