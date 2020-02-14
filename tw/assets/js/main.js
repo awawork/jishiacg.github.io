@@ -250,14 +250,14 @@
 					return s;
 
 				},
-				fadeSpeed: 300,
+				fadeSpeed: 100,
 				onPopupClose: function() { $body.removeClass('modal-active'); },
 				onPopupOpen: function() { $body.addClass('modal-active'); },
 				overlayOpacity: 0,
 				popupCloserText: '',
-				popupHeight: 150,
+				popupHeight: 1000,
 				popupLoaderText: '',
-				popupSpeed: 300,
+				popupSpeed: 100,
 				popupWidth: 150,
 				selector: '.thumb > a.image',
 				usePopupCaption: true,
