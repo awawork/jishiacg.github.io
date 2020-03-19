@@ -3,21 +3,21 @@ try {
     switch (language) {
       case 'cn':
         console.log('/cn' + window.location.pathname);
-        window.location.href = '/cn' + window.location.pathname;
+        window.location.href = 'cn.html' + window.location.pathname;
         return true;
         break;
 
       case 'zh':
       case 'tw':
         console.log('/tw' + window.location.pathname);
-        window.location.href = '/tw' + window.location.pathname;
+        window.location.href = 'tw.html' + window.location.pathname;
         return true;
         break;
 
       case 'en':
       case 'tw':
         console.log('/tw' + window.location.pathname);
-        window.location.href = '/tw' + window.location.pathname;
+        window.location.href = 'cn.html' + window.location.pathname;
         return true;
         break;
 
